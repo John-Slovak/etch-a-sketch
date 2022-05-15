@@ -11,6 +11,7 @@ function populateBoard(size) {
     let amount = size * size;
     for(let i = 0; i < amount; i++) {
         let square = document.createElement('div');
+        square.classList.add('square');
         square.addEventListener('mouseover', colorSquare);
         square.style.backgroundColor = 'white';
         board.insertAdjacentElement('beforeend', square);
@@ -57,9 +58,24 @@ document.querySelector('body').addEventListener('mousedown', () => {
 });
 document.querySelector('body').addEventListener('mouseup', () => click = false);
 
+document.querySelector('body').addEventListener('touchend', () => click = true);
+
 function clearSelection() {
     if (window.getSelection) {window.getSelection().removeAllRanges();}
     else if (document.selection) {document.selection.empty();}
  }
 
 //document.querySelector('.mode').textContent = 'Mode: Not Coloring'
+
+document.querySelector('.board').addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    let cellLocation = e.changedTouches[0];
+    let cellTarget = document.elementFromPoint(cellLocation.clientX, cellLocation.clientY);
+    if (cellTarget.classList.contains('square')) {
+        if (color === 'rainbow') {
+            cellTarget.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else {
+            cellTarget.style.backgroundColor = color;
+        }
+    } 
+});
