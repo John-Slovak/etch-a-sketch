@@ -1,5 +1,128 @@
-.board {
-    width: 500px;
-    height: 500px;
-    display: grid;
+.flex-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgba(96, 79, 252, 0.082), white);
 }
+
+.board {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    background-color: white;
+    box-shadow: 0px 0px 50px;
+}
+.board:hover {
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    min-height: 300px;
+    width: 60vw;
+    height: 60vw;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.blackButton {
+    background-color: black;
+    color: white;
+}
+
+.blackButton:hover {
+    background-color: white;
+    color: black;
+}
+
+.rainbowButton {
+    background: linear-gradient(0.25turn, #f65cfc, #ebf8e1, #583cf6);
+}
+
+.rainbowButton:hover {
+    background: linear-gradient(0.25turn, #20ff02, #ebf8e1, #aecc03);
+}
+
+.eraserButton {
+    background-color: white;
+    color: black;
+}
+
+.eraserButton:hover {
+    background-color: white;
+    color: rgb(255, 255, 255);
+}
+
+.input {
+    width: 50px;
+}
+
+.mode {
+    margin-bottom: 5px;
+}
+
+.error {
+    display: none;
+}
+
+.slidecontainer {
+    width: 100%;
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 10px; /* Specified height */
+    background: #2e2e2e; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 20px;
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
