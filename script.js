@@ -1,5 +1,5 @@
 let color = 'black';
-let click = true;
+let click = false;
 
 function populateBoard(size) {
     let board = document.querySelector('.board');
@@ -11,7 +11,7 @@ function populateBoard(size) {
     let amount = size * size;
     for(let i = 0; i < amount; i++) {
         let square = document.createElement('div');
-        square.addEventListener('mouseenter', colorSquare);
+        square.addEventListener('mouseover', colorSquare);
         square.style.backgroundColor = 'white';
         board.insertAdjacentElement('beforeend', square);
     }
@@ -51,13 +51,7 @@ function resetBoard() {
     squares.forEach((div) => div.style.backgroundColor = 'white');
 }
 
-document.querySelector('body').addEventListener('click', (e) => {
-    if (e.target.tagName != 'BUTTON') {
-        click = !click;
-        if (click) {
-            document.querySelector('.mode').textContent = 'Mode: Coloring';
-        } else {
-            document.querySelector('.mode').textContent = 'Mode: Not Coloring'
-        }
-    }
-});
+document.querySelector('body').addEventListener('mousedown', () => click = true);
+document.querySelector('body').addEventListener('mouseup', () => click = false);
+
+//document.querySelector('.mode').textContent = 'Mode: Not Coloring'
