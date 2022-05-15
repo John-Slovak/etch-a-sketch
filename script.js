@@ -51,7 +51,15 @@ function resetBoard() {
     squares.forEach((div) => div.style.backgroundColor = 'white');
 }
 
-document.querySelector('body').addEventListener('mousedown', () => click = true);
+document.querySelector('body').addEventListener('mousedown', () => {
+    click = true;
+    clearSelection();
+});
 document.querySelector('body').addEventListener('mouseup', () => click = false);
+
+function clearSelection() {
+    if (window.getSelection) {window.getSelection().removeAllRanges();}
+    else if (document.selection) {document.selection.empty();}
+ }
 
 //document.querySelector('.mode').textContent = 'Mode: Not Coloring'
