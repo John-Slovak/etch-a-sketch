@@ -1,128 +1,199 @@
+html, body { height: 100%; }
+
 .flex-container {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgba(96, 79, 252, 0.082), white);
-}
-
-.board {
-    width: 80%;
-    height: 80%;
-    display: grid;
-    background-color: white;
-    box-shadow: 0px 0px 50px;
-}
-.board:hover {
-    cursor: pointer;
+    background: linear-gradient(#383838, #282828);
 }
 
 .content {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    min-width: 300px;
-    min-height: 300px;
-    width: 60vw;
-    height: 60vw;
-    max-width: 600px;
-    max-height: 600px;
+    justify-content: center;
+    width: 900px;
+    height: 800px;
+}
+
+.board {
+    width: 700px;
+    height: 700px;
+    display: grid;
+    background-color: white;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.651);
+    border-radius: 2px;
+    margin: 0px 50px 0px;
+}
+.board:hover {
+    cursor: crosshair;
 }
 
 .title {
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    color: #f0f0f0;
+    font-size: 30px;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
+.top-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mid-buttons {
+    display: flex;
+}
+
+.low-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .buttons {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 650px;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.value-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    height: 400px;
+}
+
+.picked-color {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+    background-color: #000000;
+    transition: all 300ms ease;
+    border: 2px solid #f0f0f0;
+    background-size: cover;
+}
+
+.picked-color:hover{
+    transform:scale(1.1);
+  }
+
+p {
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    color: #f0f0f0;
+    font-size: 45px;
+    padding: 0px;
+    margin: 10px;
+}
+
+.slider-container {
+    width: 600px;
+    margin-top: -20px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #535353;
+    margin-bottom: 80px;
+  }
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #dddddd;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform:scale(1.15);
+}
+
+.color:hover{
+    transform:scale(1.2);
+  }
+
 button {
-    padding: 0.3em 1.2em;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 2em;
-    text-decoration: none;
-    font-weight: 600;
+    border-radius: 2px;
     text-align: center;
-    transition: all 0.2s;
+    transition: all 300ms ease;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #f0f0f0;
+}
+
+.color {
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    background-color: #fa3c4c;
+    transition: all 300ms ease;
+    border: 2px solid #f0f0f0;
 }
 
 button:hover {
     cursor: pointer;
+    transform:scale(1.1);
 }
 
 .blackButton {
     background-color: black;
-    color: white;
-}
-
-.blackButton:hover {
-    background-color: white;
-    color: black;
-}
-
-.rainbowButton {
-    background: linear-gradient(0.25turn, #f65cfc, #ebf8e1, #583cf6);
-}
-
-.rainbowButton:hover {
-    background: linear-gradient(0.25turn, #20ff02, #ebf8e1, #aecc03);
 }
 
 .eraserButton {
     background-color: white;
-    color: black;
 }
 
-.eraserButton:hover {
-    background-color: white;
-    color: rgb(255, 255, 255);
+.rainbowButton {
+    background: linear-gradient(110deg, #fd3b3b, #4bffff, #ffed4b);
+}
+
+.rainbowButton:hover {
+    background: linear-gradient(110deg, #724bff, #4bffff, #ff4b69);
+}
+
+.resetButton {
+    background: linear-gradient(110deg, #333333 60%, #888888 60%);
+    font-size: 30px;
+    font-weight: 900;
+    color: #f0f0f0;
+    text-shadow: 0px 5px 0px rgba(0, 0, 0, 0.603);
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
 }
 
 .input {
     width: 50px;
 }
-
-.mode {
-    margin-bottom: 5px;
-}
-
-.error {
-    display: none;
-}
-
-.slidecontainer {
-    width: 100%;
-  }
-  
-  /* The slider itself */
-  .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 10px; /* Specified height */
-    background: #2e2e2e; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-  
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    border-radius: 20px;
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }

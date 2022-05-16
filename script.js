@@ -28,7 +28,8 @@ function changeSize(input) {
 
 function changeOutput(input) {
     if ((input >= 1) && (input <= 64)) {
-        document.querySelector('.value').textContent = `${input} x ${input}`;
+        document.querySelector('.value1').textContent = input;
+        document.querySelector('.value2').textContent = input;
     }
 }
 
@@ -42,8 +43,16 @@ function colorSquare() {
     }
 }
 
+let pickedColor = document.querySelector('.picked-color')
+
 function changeColor(choice) {
     color = choice;
+    if (color == 'rainbow') {
+        pickedColor.style.cssText = 'background-image: url(./rainbow.jpg)';
+    } else {
+        pickedColor.style.cssText = 'background-image: none;'
+        pickedColor.style.backgroundColor = color;
+    }
 }
 
 function resetBoard() {
@@ -64,8 +73,6 @@ function clearSelection() {
     if (window.getSelection) {window.getSelection().removeAllRanges();}
     else if (document.selection) {document.selection.empty();}
  }
-
-//document.querySelector('.mode').textContent = 'Mode: Not Coloring'
 
 document.querySelector('.board').addEventListener('touchmove', function(e) {
     e.preventDefault();

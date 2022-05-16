@@ -6,28 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
-    <title>SketchBlock</title>
+    <title>Sketch Block</title>
 </head>
 <body>
     <div class="flex-container">
-        <div class="title"><h1>SketchBlock</h1></div>
-        <div class="mode">Mode: Coloring</div>
+        <div class="title"><h1>Sketch Block</h1></div>
         <div class="content">
-            <div class="board"></div>
             <div class="buttons">
-                <button class="blackButton" onclick="changeColor('black')">Black</button>
-                <button class="eraserButton" onclick="changeColor('white')">Eraser</button>
-                <button class="rainbowButton" onclick="changeColor('rainbow')">Rainbow</button>
-                <button class="resetButton"onclick="resetBoard()">Reset</button>
+                <div class="top-buttons">
+                    <button class="blackButton" onclick="changeColor('black')"></button>
+                    <button class="eraserButton"onclick="changeColor('white')"></button>
+                </div>
+                <div class="mid-buttons">
+                    <div class="left-buttons">
+                        <button class="color" style="background-color: #88c44d;" onclick="changeColor('#88c44d')" ></button>
+                        <button class="color" style="background-color: #e83562;" onclick="changeColor('#e83562')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                    </div>
+                    <div class="right-buttons">
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                        <button class="color" style="background-color: ;" onclick="changeColor('black')" ></button>
+                    </div>
+                </div>
+                <div class="low-buttons">
+                    <button class="rainbowButton" onclick="changeColor('rainbow')"></button>
+                    <button class="resetButton" onclick="resetBoard()">R</button>
+                </div>
             </div>
-            <div>
-                <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)">
-                <button>Set Size</button>
+            <div class="board"></div>
+            <div class="value-container">
+                <div class="picked-color"></div>
+                <p class="value1">16</p>
+                <p>x</p>
+                <p class="value2">16</p>
             </div>
-            <div class="value">16 x 16</div>
-            <div class="slidecontainer">
-                <input type="range" min="1" max="64" value="16" class="slider" oninput="changeOutput(this.value)" onchange="changeSize(this.value)">
-            </div>
+        </div>
+        <div class="slider-container">
+            <input type="range" min="1" max="64" value="16" class="slider" oninput="changeOutput(this.value)" onchange="changeSize(this.value)">
         </div>
     </div>
 </body>
