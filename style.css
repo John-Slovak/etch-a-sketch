@@ -1,4 +1,7 @@
-html, body { height: 100%; }
+html, body { 
+    height: 100%;
+    background: linear-gradient(#383838, #282828); 
+}
 
 .flex-container {
     width: 100vw;
@@ -6,7 +9,6 @@ html, body { height: 100%; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(#383838, #282828);
 }
 
 .content {
@@ -14,7 +16,7 @@ html, body { height: 100%; }
     align-items: center;
     justify-content: center;
     width: 900px;
-    height: 800px;
+    height: 700px;
 }
 
 .board {
@@ -40,7 +42,7 @@ html, body { height: 100%; }
     font-size: 30px;
     height: 50px;
     margin-top: 30px;
-    margin-bottom: -20px;
+    margin-bottom: 40px;
 }
 
 .top-buttons {
@@ -115,7 +117,7 @@ p {
 
 .slider-container {
     width: 600px;
-    margin-top: -20px;
+    margin-top: 40px;
 }
 
 .slider {
@@ -125,7 +127,6 @@ p {
     height: 5px;
     border-radius: 10px;
     background: #535353;
-    margin-bottom: 80px;
   }
   
 .slider::-webkit-slider-thumb {
